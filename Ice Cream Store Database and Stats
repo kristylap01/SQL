@@ -1,0 +1,24 @@
+CREATE TABLE ice_cream (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER); 
+INSERT INTO ice_cream VALUES (1, "Chocolate", 6); 
+INSERT INTO ice_cream VALUES (2, "Strawberry", 4); 
+INSERT INTO ice_cream VALUES (3, "Vanilla", 7); 
+INSERT INTO ice_cream VALUES (4, "Pistachio", 2); 
+INSERT INTO ice_cream VALUES (5, "Rocky Road", 4);
+INSERT INTO ice_cream VALUES (6, "Mint Chip", 3); 
+INSERT INTO ice_cream VALUES (7, "Coffee", 2); 
+INSERT INTO ice_cream VALUES (8, "Cookie Dough", 4);  
+INSERT INTO ice_cream VALUES (9, "Cotton Candy", 2); 
+INSERT INTO ice_cream VALUES (10, "Banana Cream", 4); 
+INSERT INTO ice_cream VALUES (11, "Cake Batter", 3); 
+INSERT INTO ice_cream VALUES (12, "Salted Caramel", 5);
+INSERT INTO ice_cream VALUES (13, "Chocolate Peanut Butter", 7); 
+INSERT INTO ice_cream VALUES (14, "Raspberry", 4); 
+INSERT INTO ice_cream VALUES (15, "Strawberry Cheesecake", 6); 
+INSERT INTO ice_cream VALUES (16, "Matcha Green Tea", 5); 
+
+--display the database ordered by quantity.
+SELECT * FROM ice_cream WHERE quantity >=3
+ORDER BY quantity asc;
+
+--how much ice cream in total?
+SELECT name SUM(quantity) FROM ice_cream
