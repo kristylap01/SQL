@@ -1,0 +1,88 @@
+/** Here, I have inputed all of my favorite artists and songs, and began to organize them to narrow down certain results**/ 
+CREATE TABLE singers (id INTEGER PRIMARY KEY, 
+name TEXT, 
+genre TEXT, 
+birth_year INTEGER); 
+
+INSERT INTO singers VALUES (1, "YNW Melly", "rap", "1999"); 
+INSERT INTO singers VALUES (2, "Lil Baby", "rap", "1994"); 
+INSERT INTO singers VALUES (3, "Ariana Grande", "pop", "1993"); 
+INSERT INTO singers VALUES (4, "Harry Styles", "pop", "1994"); 
+INSERT INTO singers VALUES (5, "Khalid", "R&B", "1998"); 
+INSERT INTO singers VALUES (6, "FUTURE", "rap", "1983"); 
+INSERT INTO singers VALUES (7, "SZA", "R&B", "1989"); 
+INSERT INTO singers VALUES (8, "Larry June", "rap", "1991"); 
+INSERT INTO singers VALUES (9, "Jack Harlow", "rap", "1999"); 
+INSERT INTO singers VALUES (10, "Rod Wave", "R&B", "1999"); 
+INSERT INTO singers VALUES (11, "Toosii", "rap", "2000"); 
+INSERT INTO singers VALUES (12, "Post Malone", "pop", "1995"); 
+INSERT INTO singers VALUES (13, "Summer Walker", "R&B", "1996"); 
+INSERT INTO singers VALUES (14, "Travis Scott", "rap", "1991"); 
+INSERT INTO singers VALUES (15, "Olivia Rodrigo", "pop", "2003"); 
+INSERT INTO singers VALUES (16, "Justin Bieber", "pop", "1994"); 
+INSERT INTO singers VALUES (17, "Phora", "R&B", "1994"); 
+INSERT INTO singers VALUES (18, "Snoh Aalegra", "R&B", "1987"); 
+
+CREATE TABLE songs (id INTEGER PRIMARY KEY, 
+singer_id TEXT, 
+title TEXT); 
+INSERT INTO songs (singer_id, title)
+    VALUES (1, "Robbery"); 
+INSERT INTO songs (singer_id, title)
+    VALUES (2, "On Me");
+INSERT INTO songs (singer_id, title)
+    VALUES (3, "Best Mistake"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (4, "Watermelon Sugar"); 
+INSERT INTO songs (singer_id, title)
+    VALUES (5, "Caught Up"); 
+INSERT INTO songs (singer_id, title)
+    VALUES (6, "Love You Better"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (7, "Love Galore"); 
+INSERT INTO songs (singer_id, title)
+    VALUES (8, "Smoothies in 1991"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (9, "Like A Blade Of Grass"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (10, "Never Find Us"); 
+INSERT INTO songs (singer_id, title)
+    VALUES (11, "Love Cycle"); 
+INSERT INTO songs (singer_id, title)
+    VALUES (12, "I Like You"); 
+INSERT INTO songs (singer_id, title)
+    VALUES (13, "Playing Games"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (14, "Yosemite"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (15, "Drivers License"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (16, "The Feeling"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (17, "Stars in the Sky"); 
+INSERT INTO songs (singer_id, title) 
+    VALUES (18, "I Want You Around"); 
+
+/** Create a table that includes all information from both tables**/     
+SELECT * FROM singers, songs
+    WHERE songs.singer_id=singers.id; 
+
+/**Create a table that includes the artist's name, genre, and song title**/   
+SELECT name, genre, title 
+FROM singers 
+JOIN songs 
+ON singers.id=songs.singer_id
+WHERE genre="rap"; 
+
+/** Create a table that includes the artist's name, birth year, genre, and song title. Only show those born after the year "2000"**/
+SELECT name, birth_year, genre, title
+FROM singers 
+JOIN songs 
+ON singers.id=songs.singer_id
+WHERE birth_year > 2000; 
+
+/**Create a table that shows the name of the singer and a title of one of their songs**/ 
+SELECT name, title
+FROM singers 
+JOIN songs 
+ON singers.id=songs.singer_id; 
