@@ -1,3 +1,5 @@
+/**In this SQL, I am querying a database that includes multiple tables of customer and order data**/
+
 SELECT * FROM BIT_DB.customers LIMIT 20;
 
 SELECT * FROM BIT_DB.JanSales LIMIT 20;
