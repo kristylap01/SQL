@@ -46,4 +46,5 @@ WHERE Feb.quantity>2;
 SELECT product, 
 SUM(quantity)
 FROM BIT_DB.FebSales
-WHERE location like '%Los Angeles%';
+WHERE location like '%Los Angeles%'
+GROUP BY product;
